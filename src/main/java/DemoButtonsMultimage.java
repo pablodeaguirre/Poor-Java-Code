@@ -808,7 +808,6 @@ public class DemoButtonsMultimage extends JFrame
 			int boxWidth=30;
 			int xTop = (int) (((float)width/boxWidth)  + 1) ;
 			int yTop = (int) (((float)height/boxWidth) + 1);
-			firstLoop:
 			for(int x=0; x<xTop; x++) {
 				for(int y=x%2; y<yTop; y+=2) {
 					int w = boxWidth;
@@ -822,10 +821,9 @@ public class DemoButtonsMultimage extends JFrame
 						h = height-y2;
 					}
 					if (w==0)
-						break firstLoop;
-					if (h==0)
-						break ;
-					g.fillRect(x2, y2, w, h);
+						break;
+					if (h!=0)
+						g.fillRect(x2, y2, w, h);
 				}
 			}
 		}
